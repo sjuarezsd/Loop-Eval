@@ -28,9 +28,6 @@ RUN apt-get update && \
     libpangocairo-1.0-0 \
     libasound2
 
-# Install NPM packages
-RUN npm ci
-
 # Install TypeScript
 RUN npm install -g typescript
 
@@ -46,11 +43,8 @@ RUN apt-get install -y openssh-client less iproute2 procps
 # Set user to root (for further development in container)
 # USER root
 
-# Initialize workspace
-RUN npm init
-
 # Set up the environment
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # Start the container with a shell by default
-CMD ["npx", "playwright", "test"]
+CMD ["npx", "playwright", "test", "--report=html"]
