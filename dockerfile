@@ -4,6 +4,9 @@ FROM node:20.9.0
 # Set the working directory
 WORKDIR /usr/src/app
 
+# Copy the application code
+COPY . .
+
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y \
@@ -25,6 +28,9 @@ RUN apt-get update && \
     libpangocairo-1.0-0 \
     libasound2
 
+# Install NPM packages
+RUN npm ci
+
 # Install TypeScript
 RUN npm install -g typescript
 
@@ -38,13 +44,13 @@ RUN npm install --save-dev @playwright/test
 RUN apt-get install -y openssh-client less iproute2 procps
 
 # Set user to root (for further development in container)
-USER root
+# USER root
+
+# Initialize workspace
+RUN npm init
 
 # Set up the environment
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
-# Expose the app port
-EXPOSE 3000
-
 # Start the container with a shell by default
-CMD ["bash"]
+CMD ["npx", "playwright", "test"]
