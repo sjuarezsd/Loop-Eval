@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:18
+FROM node:20.9.0
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -25,18 +25,20 @@ RUN apt-get update && \
     libpangocairo-1.0-0 \
     libasound2
 
-# Install Playwright and its dependencies
-RUN npm install -g playwright
-
 # Install TypeScript
 RUN npm install -g typescript
+
+# Install Playwright and its dependencies
+RUN npm install --save-dev @types/node
+RUN npx playwright install
+RUN npx playwright install-deps
+RUN npm install --save-dev @playwright/test
 
 # Install VS Code Remote Development dependencies
 RUN apt-get install -y openssh-client less iproute2 procps
 
-# Add user for vscode remote development
-RUN useradd -ms /bin/bash vscode
-USER vscode
+# Set user to root (for further development in container)
+USER root
 
 # Set up the environment
 ENV PATH /usr/src/app/node_modules/.bin:$PATH

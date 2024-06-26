@@ -1,5 +1,29 @@
 {
-    "name": "loop-eval",
-    "version": "1.0.0",
-    "author": "Steven Juarez sjuarez.work@gmail.com"
-  }
+  "name": "loop-eval",
+  "version": "1.0.0",
+  "author": "Steven Juarez sjuarez.work@gmail.com",
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.14.9"
+  },
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "undici-types": "^5.26.5"
+  },
+  "scripts": {
+    "test": "echo \"nothing to test yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snjuarezsd/Loop-Eval"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snjuarezsd/Loop-Eval/issues"
+  },
+  "homepage": "https://github.com/snjuarezsd/Loop-Eval#readme"
+}

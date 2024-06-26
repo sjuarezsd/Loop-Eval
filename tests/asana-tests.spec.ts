@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
 import path from 'path';
-import { TestCase } from './types';
+import { TestCase } from '../types/types';
 
 // Load the test cases from the JSON file
 const testCases: TestCase[] = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../testCases.json'), 'utf8'));
