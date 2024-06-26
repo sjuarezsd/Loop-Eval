@@ -15,7 +15,7 @@
     "undici-types": "^5.26.5"
   },
   "scripts": {
-    "test": "echo \"nothing to test yet\""
+    "test": "npx playwright test --report=html"
   },
   "repository": {
     "type": "git",
