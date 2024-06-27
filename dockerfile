@@ -47,4 +47,4 @@ RUN apt-get install -y openssh-client less iproute2 procps
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # Start container, run tests and output html test results report
-CMD ["npx", "playwright", "test", "--report=html"]
+CMD ["npx", "playwright", "test", "--reporter=html"]
