@@ -1,6 +1,6 @@
 # Loop-Eval
 
-Instructions for building container and running tests:
+Instructions for building container and running tests (you'll need to have docker installed):
 
 1. Download the repository, then with a terminal navigate to the repo folder
 2. Run `docker build .`
