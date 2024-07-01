@@ -9,7 +9,7 @@
   "description": "",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": "./tests"
   },
   "dependencies": {
     "undici-types": "^5.26.5"
