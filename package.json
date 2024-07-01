@@ -15,7 +15,7 @@
     "undici-types": "^5.26.5"
   },
   "scripts": {
-    "test": "echo tests will run when container is built"
+    "test": "npx playwright test"
   },
   "repository": {
     "type": "git",
